@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.196a8a18.js",
-    "static/js/787.3bf2b60d.chunk.js": "/static/js/787.3bf2b60d.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.196a8a18.js.map": "/static/js/main.196a8a18.js.map",
-    "787.3bf2b60d.chunk.js.map": "/static/js/787.3bf2b60d.chunk.js.map"
+    "main.css": "/guess-the-number/static/css/main.073c9b0a.css",
+    "main.js": "/guess-the-number/static/js/main.9bbd630e.js",
+    "static/js/787.3bf2b60d.chunk.js": "/guess-the-number/static/js/787.3bf2b60d.chunk.js",
+    "static/media/logo.svg": "/guess-the-number/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/guess-the-number/index.html",
+    "main.073c9b0a.css.map": "/guess-the-number/static/css/main.073c9b0a.css.map",
+    "main.9bbd630e.js.map": "/guess-the-number/static/js/main.9bbd630e.js.map",
+    "787.3bf2b60d.chunk.js.map": "/guess-the-number/static/js/787.3bf2b60d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.196a8a18.js"
+    "static/js/main.9bbd630e.js"
   ]
 }
