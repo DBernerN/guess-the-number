@@ -2,7 +2,7 @@
   "name": "guess-the-number",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dbernern.github.io",
+  "homepage": "https://dbernern.github.io/guess-the-number",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
