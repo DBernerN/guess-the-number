@@ -1,6 +1,6 @@
 {
   "name": "guess-the-number",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "homepage": "https://dbernern.github.io/guess-the-number",
   "dependencies": {
