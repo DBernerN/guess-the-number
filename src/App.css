@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Silkscreen");
+
+body {
+  font-family: "Silkscreen";
+}
+
 .App {
   text-align: center;
 }

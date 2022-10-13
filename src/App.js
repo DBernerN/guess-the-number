@@ -1,17 +1,16 @@
 //Guess the number
 import "./App.css";
+import "./styling.css";
+
 import { useEffect, useState } from "react";
 import { clear } from "@testing-library/user-event/dist/clear";
+import Modal from "./Modal";
 
-/**
- *
- *
- *
- */
+const logoImg = require("../src/Logo/logo.png");
 
 const App = () => {
   const [randomnumber, setRandomnumber] = useState(
-    Math.floor(Math.random() * 1000) + 1
+    Math.floor(Math.random() * 1001)
   );
   const [guessed, setGuessed] = useState(false);
   const [gamedone, setgamedone] = useState(false);
@@ -19,13 +18,20 @@ const App = () => {
   const [val, setVal] = useState("");
   const [error, seterror] = useState("");
 
+  const [isModalOpen, setIsModalOpen] = useState(undefined);
+
+  const onValueChange = (typedIn) => {
+    if (Math.floor(typedIn) <= 1000 && Math.floor(typedIn) >= 0) {
+      setVal(typedIn);
+    }
+  };
+
   const handlekeydown = async (e) => {
     if (e.key === "Enter") {
       const number = Math.floor(val);
       if (number === randomnumber) {
         setGuessed(true);
-        await alert("Godt klaret, du gættede rigtigt!");
-        window.location.reload();
+        setIsModalOpen({ status: "right" });
       } else {
         if (number < randomnumber) {
           seterror("Det rigtige tal er højere");
@@ -43,46 +49,74 @@ const App = () => {
   useEffect(() => {
     if (formerguesses.length === 10) {
       setgamedone(true);
-      alert("Game Over, det rigtige svar var " + randomnumber);
-      window.location.reload();
+      setIsModalOpen({ status: "wrong" });
     }
     console.log(randomnumber);
   }, [formerguesses]);
 
   return (
     <body>
-      <div className="App">
-        <h1>Velkommen til!</h1>
-        <h1>
-          <em>Gæt et tal fra 1-1000</em>
-        </h1>
-        <label>
-          <strong>Skriv dit gæt her:</strong>
-        </label>
-        <input
-          value={val}
-          onChange={(e) => setVal(e.target.value)}
-          type="number"
-          name="guessed"
-          onKeyDown={handlekeydown}
-        />
+      {isModalOpen && (
+        <Modal rightOrWrong={isModalOpen.status} randomNumber={randomnumber} />
+      )}
 
-        <p>
-          {formerguesses.length !== 0
-            ? guessed
-              ? "Rigtigt!"
-              : "Øv! Prøv igen"
-            : ""}
-        </p>
-
-        <p>{error} </p>
+      <div id="parchment" className="App">
         <img
-          src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png"
-          width="500"
+          class="img"
+          src={logoImg}
+          width="250"
+          height="250"
+          style={{ borderRadius: "50px", marginTop: "20px" }}
         />
-        {formerguesses.map((n, i) => (
-          <p key={i}>{n}</p>
-        ))}
+        <div style={{ display: "flex", flex: 1, flexDirection: "row" }}>
+          <div style={{ flex: 1 }}>
+            <h1 class="Test">Velkommen til!</h1>
+            <h1>Gæt et tal fra 1-1000</h1>
+
+            <label>
+              <strong>Skriv dit gæt her:</strong>
+            </label>
+            <input
+              class="felt"
+              value={val}
+              onChange={(e) => onValueChange(e.target.value)}
+              type="number"
+              name="guessed"
+              onKeyDown={handlekeydown}
+            />
+
+            <p>
+              {formerguesses.length !== 0
+                ? guessed
+                  ? "Rigtigt!"
+                  : "Øv! Prøv igen"
+                : ""}
+            </p>
+
+            <p>{error} </p>
+          </div>
+          <a
+            href="https://www3.nd.edu/~lemmon/courses/ee224/web-manual/web-manual/lab6/node4.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Her kan du se reglerne
+          </a>
+          <div class="gætteliste" style={{ flex: 1 }}>
+            <div>
+              <p>Du har {10 - formerguesses.length} gæt tilbage</p>
+            </div>
+            <h3>Her er dine tidigere gæt:</h3>
+            {formerguesses.map((n, i) => (
+              <p key={i}>
+                {n}{" "}
+                {n > randomnumber
+                  ? "er højere end det rigtige tal"
+                  : "er lavere end det rigtige tal"}
+              </p>
+            ))}
+          </div>
+        </div>
       </div>
     </body>
   );

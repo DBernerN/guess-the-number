@@ -1,0 +1,51 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bolder;
+  color: #6b6b6b;
+}
+
+.img {
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#parchment {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  border-radius: 5px;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin: 2em 0;
+  padding: 4em;
+  box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+  background: #fffef0;
+  filter: url(#wavy2);
+}
+
+.gætteliste {
+  padding-top: 0px;
+}
+
+.Test {
+  text-align: center;
+}
+
+.img {
+  border: red solid 3px;
+}
+
+.felt {
+  border: 1px solid black;
+  float: center;
+  margin-left: 8px;
+  padding: 0;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  background-color: #fffef0;
+  text-align: center;
+}
