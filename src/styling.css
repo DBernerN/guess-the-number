@@ -24,10 +24,12 @@
   box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
   background: #fffef0;
   filter: url(#wavy2);
+  padding-bottom: 2rem;
 }
 
 .gætteliste {
   padding-top: 0px;
+  font-size: 1.2em;
 }
 
 .Test {
@@ -42,10 +44,32 @@
   border: 1px solid black;
   float: center;
   margin-left: 8px;
-  padding: 0;
+  padding: 1em;
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
   background-color: #fffef0;
   text-align: center;
+  font-size: 2em;
+  max-width: 60%;
+  padding-bottom: 0;
+}
+
+.felt:focus {
+  outline-width: 0;
+}
+
+.label {
+  font-size: 2em;
+}
+
+.velkomstTekst {
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 768px) {
+  .velkomstTekst {
+    text-align: center;
+    flex-direction: column;
+  }
 }

@@ -1,0 +1,18 @@
+.modalGrafik {
+  width: 2000px;
+  height: 2000px;
+}
+
+.knapGrafik {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  background-color: #fffef0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.svar {
+  padding-bottom: 20px;
+  text-align: center;
+}

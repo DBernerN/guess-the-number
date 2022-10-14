@@ -5,6 +5,7 @@ import "./styling.css";
 import { useEffect, useState } from "react";
 import { clear } from "@testing-library/user-event/dist/clear";
 import Modal from "./Modal";
+import { render } from "@testing-library/react";
 
 const logoImg = require("../src/Logo/logo.png");
 
@@ -68,14 +69,12 @@ const App = () => {
           height="250"
           style={{ borderRadius: "50px", marginTop: "20px" }}
         />
-        <div style={{ display: "flex", flex: 1, flexDirection: "row" }}>
-          <div style={{ flex: 1 }}>
-            <h1 class="Test">Velkommen til!</h1>
+        <div class="velkomstTekst" style={{ display: "flex", flex: 1 }}>
+          <div id="velkomstTekst" style={{ flex: 1 }}>
+            <h1>Velkommen til!</h1>
             <h1>Gæt et tal fra 1-1000</h1>
 
-            <label>
-              <strong>Skriv dit gæt her:</strong>
-            </label>
+            <label class="label">Skriv dit gæt her:</label>
             <input
               class="felt"
               value={val}
@@ -95,16 +94,16 @@ const App = () => {
 
             <p>{error} </p>
           </div>
-          <a
-            href="https://www3.nd.edu/~lemmon/courses/ee224/web-manual/web-manual/lab6/node4.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Her kan du se reglerne
-          </a>
+
           <div class="gætteliste" style={{ flex: 1 }}>
             <div>
-              <p>Du har {10 - formerguesses.length} gæt tilbage</p>
+              <p style={{ fontSize: "1.2em" }}>
+                Du har{" "}
+                <span style={{ fontSize: "1.5em" }}>
+                  {10 - formerguesses.length}
+                </span>{" "}
+                gæt tilbage
+              </p>
             </div>
             <h3>Her er dine tidigere gæt:</h3>
             {formerguesses.map((n, i) => (
