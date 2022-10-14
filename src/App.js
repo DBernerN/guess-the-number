@@ -75,6 +75,7 @@ const App = () => {
             <h1>Gæt et tal fra 1-1000</h1>
 
             <label class="label">Skriv dit gæt her:</label>
+            <br></br>
             <input
               class="felt"
               value={val}
